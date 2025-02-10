@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Menampilkan Marker</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <script src="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.js"></script>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v1.8.0/mapbox-gl.css" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    #map {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  <script>
+    mapboxgl.accessToken = 'pk.eyJ1Ijoic3RpZmFuaGlsZmEiLCJhIjoiY202N2JydGVxMDJtaDJ0cXpzMTN4czJkcSJ9.PEGsK7u2CRNZJ9h0g9x1PA';
+    var map = new mapboxgl.Map({
+      container: 'map',
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [107.615299, -6.8868957],
+      zoom: 14
+    });
+
+    var infoMarker = "<a href='https://unikom.ac.id/' target='_blank'><h3>Universitas Komputer Indonesia</h3></a>";
+    infoMarker += "Jl. Dipati Ukur No.112-116, Lebakgede, Kecamatan Coblong, Kota Bandung, Jawa Barat 40132";
+
+    new mapboxgl.Marker()
+      .setLngLat([107.615299, -6.8868957])
+      .setPopup(new mapboxgl.Popup().setHTML(infoMarker))
+      .addTo(map);
+  </script>
+</body>
+</html>

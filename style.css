@@ -1,0 +1,19 @@
+nav{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    background-color: #578FCA;
+}
+
+nav h1{
+    font-size: 40px;
+    color: whitesmoke;
+    position: relative;
+    left: 100px;
+    top: 15px;
+}
+
+nav img.gambar1{
+    position: relative;
+    bottom: 200px;
+}
